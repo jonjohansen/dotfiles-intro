@@ -1,0 +1,16 @@
+{
+  "commands": [
+    {
+      "label": "Example command",
+      "command": "echo Hello world",
+      "sudo": false
+    }
+  ],
+  "symlinks": [
+    {
+      "label": "zsh config",
+      "src": "$DOTFILES/.zshrc",
+      "dest": "$HOME/.zshrc"
+    }
+  ]
+}
