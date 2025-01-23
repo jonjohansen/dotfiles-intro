@@ -35,20 +35,16 @@ echo $SHELL
 
 Vi blir å ha bruk for å vite _hvor_ dotfiles-mappa vår ligger. Så må du lage en environment-variabel der som har ruta til dotfilene dine.
 
-Disse kan begge legges i dotfiles-mappa, og man lager en symlink fra `$DOTFILES/.zshrc` til `~/.zshrc`
-
-Legg til dette i toppen av `rc`-fila di:
-
+For å enkelt legge huske filstien til dotfiles-mappa di kan du kjøre denne kommandoen for å legge det til som environment-variabel: 
 ```sh
-export DOTFILES="~/.dotfiles-macos/zshrc"
+DOTFILES="$HOME/.dotfiles"
 ```
 
-> [!TIP]
-> For å sjekke om det funker, kan du kjøre følgende kommandoer
->
-> `source ~/.dotfiles-macos/.zshrc`
->
-> `echo $DOTFILES/` // /Users/jon/.dotfiles-macos/
+Disse kan begge legges i dotfiles-mappa, og man lager en symlink fra `$DOTFILES/.zshrc` til `~/.zshrc`
+
+>[!TIP]
+> Du kan og bør legge DOTFILES-variabelen din på toppan av `.zshrc`-fila di, så kan du bruke den videre.
+> `export DOTFILES="$HOME/.dotfiles"`
 
 #### Andre shell-filer
 
