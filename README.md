@@ -11,13 +11,13 @@ Du kan begynne med å lage en mappe der!
 Vi skal flytte en del filer, også på kommandolinja. Da kan det være greit å være kjent med `mv` som er
 en kommando for å flytte filer.
 
-```
+```sh
 mv source target
 ```
 
 og `open` som åpner filer eller mapper.
 
-```
+```sh
 open <FILE>/<FOLDERNAME>
 ```
 
@@ -26,7 +26,7 @@ open <FILE>/<FOLDERNAME>
 Litt avhengig av hvilken shell man bruker så er det litt forskjellige filer som er i bruk for innstillinger!
 Er du usikker på hvilket shell du bruker kan du kjøre kommandoen
 
-```
+```sh
 echo $SHELL
 ```
 
@@ -39,7 +39,7 @@ Disse kan begge legges i dotfiles-mappa, og man lager en symlink fra `$DOTFILES/
 
 Legg til dette i toppen av `rc`-fila di:
 
-```
+```sh
 export DOTFILES="~/.dotfiles-macos/zshrc"
 ```
 
@@ -60,7 +60,7 @@ Jeg har delt min opp i følgende underfiler:
 
 Disse kan du enkelt laste inn ved å legge de til i `.zshrc`/`.bashrc`
 
-```
+```sh
 source $DOTFILES/.path
 source $DOTFILES/.alias
 ```
@@ -82,19 +82,19 @@ Du kan kopiere `install.py` og `config.json` herfra og inn i mappa di!
 [Brew](https://brew.sh/) er en package-manager til macOs. Her kan man både installere verktøy,
 men også apper og programmer.
 
-```
+```sh
 brew update
 ```
 
 Og så oppdatere alle brews:
 
-```
+```sh
 brew upgrade
 ```
 
 og så legge til støtte for `brew bundle` som hjelper med å lage en `Brewfile`
 
-```
+```sh
 brew tap homebrew/bundle
 ```
 
@@ -106,13 +106,13 @@ du _vet_ at du skal ha på plass i oppsettet ditt.
 
 Du kan se hvilke pakker du har installert med
 
-```
+```sh
 brew list
 ```
 
 For å eksportere alle disse til en `Brewfile` kan du kjøre
 
-```
+```sh
 brew bundle dump
 ```
 
@@ -130,7 +130,7 @@ du _ikke_ ønsker å alltid ha installert.
 `brew bundle` leter i utgangspunktet kun etter en `Brewfile` i nærmeste mappe.
 Du kan sende inn en fil med flagget `--file`, og kan peke den på din dotfiles-Brewfile med `brew bundle --file $DOTFILES/Brewfile`
 
-```
+```sh
 brew bundle --file $DOTFILES/Brewfile
 ```
 
@@ -143,11 +143,11 @@ Disse finner du som regel i en fil på rot i home-mappa (`~`) og heter den heter
 
 Du kan også ha en global gitignore som kan være grei å ha med seg. For å lage dette kan du kjøre kommandoene
 
-```
+```sh
 touch ~/.gitignore
 ```
 
-```
+```sh
 git config --global core.excludesfile ~/.gitignore
 ```
 
@@ -161,13 +161,13 @@ innstillingene ut fra dotfiles-mappa, kan man heller sette innstillingen til å 
 1. Kopier `~/Library/Preferences/com.googlecode.iterm2.plist` til dotfilene dine
 2. Spesifiser den nye pathen til innstillingene med
 
-```
+```sh
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "<PATH>";
 ```
 
 og sett innstillingen for å bruke egen config-path med
 
-```
+```sh
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true;
 ```
 
@@ -190,7 +190,7 @@ Disse kan settes gjennom kommandoer, og for enkelhets skyld kan du pakke de samm
 Mange innstillinger finner du på [macos-defaults](https://macos-defaults.com/)
 og ser f.eks ut som denne for å bytte scrolle-retning:
 
-```
+```sh
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 ```
 
